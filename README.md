@@ -1,29 +1,16 @@
 Awesome Powerarrow theme for 3.5
 ================================
 
-:Original Author: https://github.com/romockee/powerarrow
+:Original Project: https://github.com/romockee/powerarrow
 
-**Currently working on the Powerarrow-dark**
-
-:Find it here: https://github.com/esn89/powerarrow-dark
-
-This is my fork of Romockee's Powerarrow theme, implemented
-for Awesome-WM 3.5
-This project is now in a stage where
-90% of the widgets work
+This is a fork of Romockee's Powerarrow theme, implemented
+for Awesome-WM 3.5 on a Retina Apple Macbook
 
 Notes
 -----
 
-I did not include the enormous right-click
-menu that Romockee has.  Not because it is difficult to
-implement, but the fact that I don't have/need 99% of the
-software, books and applications he had.  If you need it, I
-will be more than happy to figure it out for you.
-
-In addition, I am trying to make this version of PowerArrow
-as light as possible in terms of code and the desktop
-itself.
+Change the Xorg Dpi for Terminal & other in .Xressources
+  Xft.dpi:       160
 
 Installation
 ------------
@@ -47,11 +34,8 @@ Todo:
 - In the rc.lua, change the browser and terminal to the one you are using.
 - In the rc.lua at line 147, 149 change the wireless and ethernet interfaces to your own.  (You can find out what the name is by running ``iwconfig`` in your terminal
 
-**Beware, some of the hotkeys/key-bindings are from my rc.lua, so if something that you are used to pressing doesn't work, check my global keys**
+**Beware, some of the hotkeys/key-bindings are not yet working**
 
-
-What works in my version so far
--------------------------------
 
 - The layout in general (powerline)
 - Clock
@@ -94,16 +78,6 @@ look like this:
 ``machine mail.google.com login youremail@gmail.com password
 yoursecretpassword``  (without the quotations of course)
 
-Future Direction:
--------------------------------
-
-- Looking to implement a calendar by turning the date
-  textbox into a button
-- Will implement a battery widget that actually corresponds
-  to the amount of battery you have left. (I am huge
-  fan/advocate of icons that are dynamic, can change and
-  ones that reflect on current status)
-- Powerarrow dark!
 
 Screenshots:
 -------------------------------
