@@ -43,18 +43,18 @@ end
 --{{---| Theme | -------------------------------------
 
 -- Todo:  Please change the "ep" to your $USER
-config_dir = ("/home/ep/.config/awesome/")
+config_dir = ("/home/epheo/.config/awesome/")
 themes_dir = (config_dir .. "/powerarrowf")
 
 beautiful.init(themes_dir .. "/theme.lua")
 
 -- This is used later as the default terminal, browser and editor to run.
-terminal = "termite"
+terminal = "terminator"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
-browser = "chromium"
+browser = "firefox"
 
-font = "Inconsolata 11"
+font = "Inconsolata 18"
 
 -- {{ These are the power arrow dividers/separators }} --
 arr1 = wibox.widget.imagebox()
@@ -108,7 +108,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3}, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7}, s, layouts[1])
 end
 -- }}}
 
@@ -153,7 +153,7 @@ vicious.register(netwidget, vicious.widgets.net, function(widget, args)
     else
         return ""
     end
-    return '<span background="#C2C2A4" font="Inconsolata 11"> <span font ="Inconsolata 11" color="#FFFFFF">'..args["{"..interface.." down_kb}"]..'kbps'..'</span></span>' end, 10)
+    return '<span background="#C2C2A4" font="Inconsolata 18"> <span font ="Inconsolata 18" color="#FFFFFF">'..args["{"..interface.." down_kb}"]..'kbps'..'</span></span>' end, 10)
 
 ---{{---| Wifi Signal Widget |-------
 neticon = wibox.widget.imagebox()
@@ -174,14 +174,14 @@ baticon = wibox.widget.imagebox()
 baticon:set_image(beautiful.baticon)
 
 batwidget = wibox.widget.textbox()
-vicious.register( batwidget, vicious.widgets.bat, '<span background="#92B0A0" font="Inconsolata 11"><span font="Inconsolata 11" color="#FFFFFF" background="#92B0A0">$1$2% </span></span>', 30, "BAT0" )
+vicious.register( batwidget, vicious.widgets.bat, '<span background="#92B0A0" font="Inconsolata 18"><span font="Inconsolata 18" color="#FFFFFF" background="#92B0A0">$1$2% </span></span>', 30, "BAT0" )
 
 
 --{{---| File Size widget |-----
 fswidget = wibox.widget.textbox()
 
 vicious.register(fswidget, vicious.widgets.fs,
-'<span background="#D0785D" font="Inconsolata 11"> <span font="Inconsolata 11" color="#EEEEEE">${/home used_gb}/${/home avail_gb} GB </span></span>', 
+'<span background="#4B3B51" font="Inconsolata 18"><span font="Inconsolata 18" color="#EEEEEE">${/home used_gb}/${/home avail_gb} GB </span></span>', 
 800)
 
 fsicon = wibox.widget.imagebox()
@@ -190,8 +190,8 @@ fsicon:set_image(beautiful.fsicon)
 ----{{--| Volume / volume icon |----------
 volume = wibox.widget.textbox()
 vicious.register(volume, vicious.widgets.volume,
-'<span background="#4B3B51" font="Inconsolata 11"><span font="Inconsolata 11" color="#EEEEEE"> Vol:$1 </span></span>', 0.3, "Master")
-
+ 
+'<span background="#D0785D" font="Inconsolata 18"> <span font="Inconsolata 18" color="#EEEEEE"> Vol:$1 </span></span>', 0.3, "Master")
 volumeicon = wibox.widget.imagebox()
 vicious.register(volumeicon, vicious.widgets.volume, function(widget, args)
     local paraone = tonumber(args[1])
@@ -211,7 +211,7 @@ end, 0.3, "Master")
 --{{---| CPU / sensors widget |-----------
 cpuwidget = wibox.widget.textbox()
 vicious.register(cpuwidget, vicious.widgets.cpu,
-'<span background="#4B696D" font="Inconsolata 11"> <span font="Inconsolata 11" color="#DDDDDD">$2%<span color="#888888">·</span>$3% </span></span>', 5)
+'<span background="#4B696D" font="Inconsolata 18"> <span font="Inconsolata 18" color="#DDDDDD">$2%<span color="#888888">·</span>$3% </span></span>', 5)
 
 cpuicon = wibox.widget.imagebox()
 cpuicon:set_image(beautiful.cpuicon)
@@ -219,7 +219,7 @@ cpuicon:set_image(beautiful.cpuicon)
 --{{--| MEM widget |-----------------
 memwidget = wibox.widget.textbox()
 
-vicious.register(memwidget, vicious.widgets.mem, '<span background="#777E76" font="Inconsolata 11"> <span font="Inconsolata 11" color="#EEEEEE" background="#777E76">$2MB </span></span>', 20)
+vicious.register(memwidget, vicious.widgets.mem, '<span background="#777E76" font="Inconsolata 18"> <span font="Inconsolata 18" color="#EEEEEE" background="#777E76">$2MB </span></span>', 20)
 memicon = wibox.widget.imagebox()
 memicon:set_image(beautiful.mem)
 
@@ -306,7 +306,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s, height = "16" })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = "26" })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -317,30 +317,19 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(arr9)
     right_layout:add(mailicon)
-    right_layout:add(arr8)
     right_layout:add(memicon)
     right_layout:add(memwidget)
-    right_layout:add(arr7)
     right_layout:add(cpuicon)
     right_layout:add(cpuwidget)
-    right_layout:add(arr6)
     right_layout:add(volumeicon)
     right_layout:add(volume)
-    right_layout:add(arr5)
-    right_layout:add(fsicon)
-    right_layout:add(fswidget)
-    right_layout:add(arr4)
     right_layout:add(baticon)
     right_layout:add(batwidget)
-    right_layout:add(arr3)
     right_layout:add(neticon)
     right_layout:add(netwidget)
-    right_layout:add(arr2)
     right_layout:add(clockicon)
     right_layout:add(tdwidget)
-    right_layout:add(arr1)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -412,6 +401,11 @@ awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Mast
             awful.client.focus.bydirection("up")
             if client.focus then client.focus:raise() end
         end),
+
+    -- Brightness
+
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 15") end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -517,6 +511,7 @@ clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
+
 
 -- Set keys
 root.keys(globalkeys)

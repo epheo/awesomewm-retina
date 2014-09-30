@@ -5,9 +5,9 @@
 theme = {}
 
 -- Todo:  Change the $USER to yourself.
-pathToConfig = "/home/ep/.config/awesome/"
+pathToConfig = "/home/epheo/.config/awesome/"
 
-theme.font          = "sans 8"
+theme.font          = "Inconsolata 18"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#1E2320"
@@ -41,8 +41,8 @@ theme.taglist_squares_unsel = pathToConfig .. "powerarrowf/icons/square_unsel.pn
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
-theme.menu_height = 15
-theme.menu_width  = 100
+theme.menu_height = 20
+theme.menu_width  = 120
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -86,15 +86,15 @@ theme.layout_tiletop = pathToConfig .. "powerarrowf/layouts/tiletop.png"
 
 --{{ For the Dark Theme }} --
 
-theme.arr1 = pathToConfig .. "powerarrowf/icons/arr1.png"
-theme.arr2 = pathToConfig .. "powerarrowf/icons/arr2.png"
-theme.arr3 = pathToConfig .. "powerarrowf/icons/arr3.png"
-theme.arr4 = pathToConfig .. "powerarrowf/icons/arr4.png"
-theme.arr5 = pathToConfig .. "powerarrowf/icons/arr5.png"
-theme.arr6 = pathToConfig .. "powerarrowf/icons/arr6.png"
-theme.arr7 = pathToConfig .. "powerarrowf/icons/arr7.png"
-theme.arr8 = pathToConfig .. "powerarrowf/icons/arr8.png"
-theme.arr9 = pathToConfig .. "powerarrowf/icons/arr9.png"
+-- theme.arr1 = pathToConfig .. "powerarrowf/icons/arr1.png"
+-- theme.arr2 = pathToConfig .. "powerarrowf/icons/arr2.png"
+-- theme.arr3 = pathToConfig .. "powerarrowf/icons/arr3.png"
+-- theme.arr4 = pathToConfig .. "powerarrowf/icons/arr4.png"
+-- theme.arr5 = pathToConfig .. "powerarrowf/icons/arr5.png"
+-- theme.arr6 = pathToConfig .. "powerarrowf/icons/arr6.png"
+-- theme.arr7 = pathToConfig .. "powerarrowf/icons/arr7.png"
+-- theme.arr8 = pathToConfig .. "powerarrowf/icons/arr8.png"
+-- theme.arr9 = pathToConfig .. "powerarrowf/icons/arr9.png"
 
 -- The clock icon:
 theme.clock = pathToConfig .. "powerarrowf/icons/myclocknew.png"
