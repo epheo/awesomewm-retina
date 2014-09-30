@@ -79,32 +79,3 @@ look like this:
 yoursecretpassword``  (without the quotations of course)
 
 
-Screenshots:
--------------------------------
-
-.. image:: http://i.imgur.com/yiLCxWr.png
-- you got mail!
-
-.. image:: http://i.imgur.com/B8gqVml.png
-- you have no mail.
-
-.. image:: http://i.imgur.com/80G9i0j.png
-- volume level high
-
-.. image:: http://i.imgur.com/KdD7vNX.png
-- volume level medium
-
-.. image:: http://i.imgur.com/oAiyiTi.png
-- volume level low
-
-.. image:: http://i.imgur.com/yaHOt3P.png
-- volume icon muted
-
-.. image:: http://i.imgur.com/oqBm8Qf.png
-- wifi signal low
-
-.. image:: http://i.imgur.com/nb0dBOx.png
-- wifi signal medium
-
-.. image:: http://i.imgur.com/q1o4PRU.png
-- The desktop so far
