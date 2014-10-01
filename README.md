@@ -10,7 +10,7 @@ Notes
 -----
 
 Change the Xorg Dpi for Terminal & other in .Xressources
-  Xft.dpi:       160
+>  Xft.dpi:       160
 
 Installation
 ------------

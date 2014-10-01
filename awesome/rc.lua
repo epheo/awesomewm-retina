@@ -121,10 +121,15 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },                                                                                           
+                                    { "Shutdown", "gksudo halt" },              
+                                    { "Reboot", "gksudo reboot" },              
+                                    { "LockScreen", "slock" },                  
+                                    { "Screensaver", "xscreensaver-command -lock" },
+                                    { "Susbend", "gksudo acpitool -s" },        
+                                    { "open terminal", terminal }               
+                                  }                                             
+                        })   
 
 mylauncher = awful.widget.launcher({ menu = mymainmenu })
 
@@ -394,9 +399,9 @@ awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Mast
 
     -- Media
 
-    awful.key({ }, "XF86AudioRaiseVolume", 	function () awful.util.spawn("amixer set Master 2%+", false) 	end),
-    awful.key({ }, "XF86AudioLowerVolume", 	function () awful.util.spawn("amixer set Master 2%-", false) 	end),
-    awful.key({ }, "XF86AudioMute", 		function () awful.util.spawn("amixer set Master toggle", false) end),
+    awful.key({ }, "XF86AudioRaiseVolume", 	function () awful.util.spawn("amixer set Master 2%+") 	end),
+    awful.key({ }, "XF86AudioLowerVolume", 	function () awful.util.spawn("amixer set Master 2%-") 	end),
+    -- awful.key({ }, "XF86AudioMute", 		function () awful.util.spawn("amixer set Master toggle") end),
 
     -- Brightness
 
@@ -529,8 +534,8 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Firefox" },
+        properties = { tag = tags[1][1] } },
 }
 -- }}}
 
@@ -615,9 +620,11 @@ function run_once(cmd)
         awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 
--- {{ I need redshift to save my eyes }} -
-run_once("redshift -l 49.26:-123.23")
-awful.util.spawn_with_shell("xmodmap ~/.speedswapper")
+-- {{ I need redshift to save my eyes }} - awful.util.spawn_with_shell("xmodmap ~/.speedswapper")
+run_once("terminator")
+run_once("sudo wicd")
+run_once("firefox")
+run_once("xscreensaver")
 
 -- {{ Turns off the terminal bell }} --
 awful.util.spawn_with_shell("/usr/bin/xset b off")
